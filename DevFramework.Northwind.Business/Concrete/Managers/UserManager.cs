@@ -16,7 +16,6 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         public UserManager(IUserDal userDal)
         {
             _userDal = userDal;
-
         }
 
         public User GetByUserNameAndPassword(string userName, string Password)

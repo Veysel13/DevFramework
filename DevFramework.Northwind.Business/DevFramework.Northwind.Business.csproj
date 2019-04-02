@@ -54,6 +54,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,8 +63,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IGaleryService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\Managers\GaleryManager.cs" />
     <Compile Include="Concrete\Managers\ProductManager.cs" />
     <Compile Include="Concrete\Managers\UserManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />

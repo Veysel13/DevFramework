@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using DevFramework.Core.DataAccess;
 using DevFramework.Core.DataAccess.EntityFramework;
 using DevFramework.Core.DataAccess.NHihabernate;
+using DevFramework.Core.Functions.Concrete;
+using DevFramework.Core.Functions.ImageService.Abstract;
 using DevFramework.Northwind.Business.Abstract;
 using DevFramework.Northwind.Business.Concrete.Managers;
 using DevFramework.Northwind.DataAccess.Abstract;
@@ -25,8 +27,15 @@ namespace DevFramework.Northwind.Business.DependencyResolvers.Ninject
             Bind<IProductDal>().To<EfProductDal>().InSingletonScope();
 
 
+
             Bind<IUserService>().To<UserManager>().InSingletonScope();
             Bind<IUserDal>().To<EfUserDal>().InSingletonScope();
+
+            Bind<IGaleryService>().To<GaleryManager>().InSingletonScope();
+            Bind<IGaleryDal>().To<EfGaleryDal>().InSingletonScope();
+
+
+            Bind<IImageService>().To<ImageManager>().InSingletonScope();
 
 
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
